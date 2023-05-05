@@ -75,5 +75,4 @@ Hand gesture operation is run through desktop and the robot movement operation i
 1) Python 
 *libraries:* Mediapipe, Time, OpenCV, Adafruit Motor Module, Pynput, Threading, Tkinter, Socket
 
-![Robotic Arm](https://i.ibb.co/J3k6947/Robotic-Arm.gif)
-
+![Robot Arm](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RmNjgwNjUyMjUwZjdmYmEzYmE3ZDVlYjRiYjFhY2UzMzRjNTcxNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xEoDjr73SDCCUqOsuA/giphy.gif)
