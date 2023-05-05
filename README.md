@@ -16,7 +16,7 @@ Raspberry Pi basically acts as a web server, and the clients will be one of the 
 3) Blue LED
 
 *Programming and Markup Languages:*<br>
-1) Python 
+1) Python <br>
 *libraries:* Flask, OpenCV, GPIOZero, atexit
 2) HTML<br>
 *components*: CSS, JavaScript
