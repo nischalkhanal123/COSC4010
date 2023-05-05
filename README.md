@@ -9,16 +9,16 @@ As a part of the independent study, three projects were done by combining the ha
 
 Raspberry Pi basically acts as a web server, and the clients will be one of the computers connected to the same network as Raspberry Pi. The clients will be able to access the webpage through the IP address of Raspberry Pi and control the LEDs using the slider from the webpage remotely. 
 
-**Components Used:**
+**Components Used:**<br>
 *Hardware:* 
 1) Raspberry Pi
 2) Camera
 3) Blue LED
 
-*Programming and Markup Languages:*
+*Programming and Markup Languages:*<br>
 1) Python 
 *libraries:* Flask, OpenCV, GPIOZero, atexit
-2) HTML
+2) HTML<br>
 *components*: CSS, JavaScript
 
 ![Simple IoT](https://i.ibb.co/D8JjLjh/Simple-Io-T-1.gif)
@@ -29,9 +29,9 @@ This project deals with creating an autonomous vehicle or robot, using Raspberry
 
 The two IR sensors is faced down on the floor, lying on either sides to detect the tape. If both IR sensors does not detect the electric tape, the vehicle moves forward. Likewise, if the left IR sensor detects the black tape on the rounded edges, the vehicle will steer left. Similarly, if the right IR sensor detects the black tape on the rounded edges, the vehicle will steer right. 
 
-**Components Used:**
+**Components Used:**<br>
 
-*Hardware:* 
+*Hardware:* <br>
 1) Raspberry Pi
 2) Camera
 3) Adafruit MotorHAT
@@ -40,8 +40,8 @@ The two IR sensors is faced down on the floor, lying on either sides to detect t
 6) Battery Pack for Motors
 7) Portable Power Supply for Raspberry Pi'
 
-*Programming and Markup Languages:*
-1) Python 
+*Programming and Markup Languages:*<br>
+1) Python <br>
 *libraries:* Time, OpenCV, Adafruit Motor Module, Pynput, Threading, Tkinter
 
 ![Autonomous vehicle](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTkxNDJhZTUxYTQxNGFkZTFhNjEzNDZmOTI0NTg3YzEyYTBkNjZkMSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Q2a5nsBT2j2ej0XE83/giphy.gif)
@@ -62,8 +62,8 @@ Hand gesture operation is run through desktop and the robot movement operation i
 - The Peace sign makes it go either anti-clockwise, left, or release depending on the orientation.
 - The Palm sign pauses or halts the Arm.
 
-**Components Used:**
-*Hardware:* 
+**Components Used:**<br>
+*Hardware:* <br>
 1) Raspberry Pi
 2) Camera
 3) Adafruit MotorHATs (x2)
@@ -71,8 +71,8 @@ Hand gesture operation is run through desktop and the robot movement operation i
 6) Battery Pack for Motors (x2)
 7) Portable Power Supply for Raspberry Pi'
 
-*Programming Languages:*
-1) Python 
+*Programming Languages:*<br>
+1) Python <br>
 *libraries:* Mediapipe, Time, OpenCV, Adafruit Motor Module, Pynput, Threading, Tkinter, Socket
 
-![Robot Arm](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RmNjgwNjUyMjUwZjdmYmEzYmE3ZDVlYjRiYjFhY2UzMzRjNTcxNiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xEoDjr73SDCCUqOsuA/giphy.gif)
+![Robot Arm](https://s12.gifyu.com/images/RoboticArm.md.gif)
