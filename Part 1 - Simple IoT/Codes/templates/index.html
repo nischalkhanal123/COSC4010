@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>nUWTech Laboratory Development</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function() {
+            // get the slider element
+            var slider = $('#slider');
+
+            // set the initial value of the slider to 0.5
+            slider.val(0.5);
+
+            // send a POST request to the server when the slider value changes
+            slider.change(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/set_brightness',
+                    data: {brightness: slider.val()}
+                });
+            });
+        });
+    </script>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+
+.body{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -40px;
+    width: 1920;
+    height: 1080;
+    background-image: url(https://wallpapercave.com/wp/wp4312249.png);
+    -webkit-filter: blur(1px);
+    z-index: 0;
+}
+
+.grad{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: auto;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    z-index: 1;
+    opacity: 0.7;
+}
+
+
+.header{
+    position: absolute;
+    top: 45px;
+    left: 800px;
+    z-index: 2;
+}
+
+.header div{
+    float: left;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+    font-size: 45px;
+    font-weight: 200;
+}
+
+.header div span{
+    color: red !important;
+}
+.webtext{
+    position: absolute;
+    top: 160px;
+    left: 40px;
+    right: 340px;
+    bottom: 140px;
+    width: auto;
+    height: auto;
+    opacity: 0.7;
+    font-family: 'Exo', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    z-index: 3;
+    }
+.video-container{
+    position: absolute;
+    top: 417px;
+    right: 610px;
+    display: block;
+    border: 5px solid #ceebf0;
+    box-shadow: 0 0 60px rgba(3, 176, 95, 0.5)
+}
+.video-container img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    filter: brightness(1.4); contrast(1.3)
+        }
+
+.led-status {
+  color: red;
+}
+
+.led-status.on {
+  color: green;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+input[type="range"] {
+            -webkit-appearance: none;
+            width: 20%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            outline: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: #2196F3;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background-color: #2196F3;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    $(document).ready(function() {
+      var slider = $('#brightness-slider');
+      var label = $('#brightness-label');
+      label.text(slider.val());
+      slider.on('input', function() {
+        var value = $(this).val();
+        label.text(value);
+        $.post('/set_brightness', {brightness: value});
+        if (this.value < 1) {
+            $("#led-status").html("LED Status: Off").css("color", "red", "font-weight", "900");
+          } else {
+            $("#led-status").html("LED Status: On").css("color", "green","font-weight", "900");
+          }
+      });
+    });
+  </script>
+    <div class="body"></div>
+        <div class="grad"></div>
+        <div class="header">
+            <div>COSC-4010<span><br>Simple IoT</span></div>
+        </div>
+        <br><br>
+    <div class='webtext'>Blue LED Controller<br><br>
+    <input type="range" id="brightness-slider" min="0" max="100" value="0" step = "0.1">
+    <p>Current brightness: <span id="brightness-label">0</span></p>
+    <p id="led-status" style="color: red; font-weight:900;">LED Status: Off</p>
+    <p style="color:white; position:absolute;top:173px;left:850px;font-weight:1000">Video Preview</p></div>
+    <div class="video-container">
+    <img src="{{ url_for('video_feed') }}" width="300" height="300"></center></div>
+    
+</body>
+</html>
